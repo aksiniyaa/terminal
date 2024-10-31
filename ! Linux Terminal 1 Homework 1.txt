@@ -1,0 +1,122 @@
+﻿Первое ДЗ 
+Linux terminal (GitBash) commands
+
+
+1) Посмотреть где я
+pwd
+
+
+2) Создать папку
+mkdir fol_trmnl
+
+
+3) Зайти в папку
+cd fol_trmnl
+
+
+4) Создать 3 папки
+mkdir fol1 fol2 fol3
+
+
+5) Зайти в любую папку
+cd fol3
+
+
+6) Создать 5 файлов (3 txt, 2 json)
+touch file1.txt file2.txt file3.txt file1.json file2.json
+
+
+7) Создать 3 папки
+mkdir subfol1 subfol2 subfol3
+
+
+8. Вывести список содержимого папки
+ls
+
+
+9) + Открыть любой txt файл
+vim file3.txt
+
+
+10) + написать туда что-нибудь, любой текст.
+i
+Hello everyone!
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+
+11) + сохранить и выйти.
+ESC → :wq → Enter
+
+
+12) Выйти из папки на уровень выше
+cd ..
+
+
+13) переместить любые 2 файла, которые вы создали, в любую другую папку.
+mv fol3/*file2.txt* fol2
+mv fol3/*file2.json* fol1
+
+
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку.
+cp fol3/*file1.txt* fol1
+cp fol3/*file1.json* fol2
+
+
+
+
+15) Найти файл по имени
+find -name "file3.txt"
+
+
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает.
+grep -i hello file3.txt
+
+
+17) вывести несколько первых строк из текстового файла
+head -n 5 file3.txt
+
+
+18) вывести несколько последних строк из текстового файла
+tail -n 5 file3.txt
+
+
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает.
+less file3.txt
+стрелка вверх/вниз
+q
+
+
+20) вывести дату и время
+date
+
+
+=========
+
+
+Задание *
+1) Отправить http запрос на сервер.
+curl http://162.55.220.72:5005/terminal-hw-request
+
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+vim scrpt.sh
+i
+cd fol_terminal
+mkdir fol1,fol2,fol3
+cd fol3
+touch file1.txt file2.txt file3.txt file1.json file2.json
+mkdir subfol1 subfol2 subfol3
+ls
+mv fol2,/*file1.txt* fol3
+mv fol3/*file1.txt* fol2,
+#!/bin/bash
+./scrpt.sh
